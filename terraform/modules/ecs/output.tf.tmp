@@ -1,0 +1,9 @@
+output "ecs" {
+  value = "${
+    map(
+      "ecr_nginx_url", "${ aws_ecr_repository.nginx.repository_url }",
+      "ecr_api_url",   "${ aws_ecr_repository.api.repository_url }"
+    )
+  }"
+}
+
